@@ -2,14 +2,18 @@
 var $tbody = document.querySelector("tbody");
 var $dateInput = document.querySelector("#datetime");
 var $stateInput = document.querySelector("#state");
-var $searchBtn = document.querySelector("#search");
+var $searchBtn = document.querySelector("#add");
 var $cityInput = document.querySelector("#city");
 var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
 
 
+
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
+
+// add event listener to the add button
+// addBtn.addEventListener("click", someOtherFunction);
 
 // Set filteredAddresses to dataSet initially
 var filteredTable = dataSet;
@@ -25,7 +29,8 @@ function renderTable() {
     // Create a new row in the tbody, set the index to be i + startingIndex
     var $row = $tbody.insertRow(i);
     for (var j = 0; j < fields.length; j++) {
-      // For every field in the address object, create a new cell at set its inner text to be the current value at the current address's field
+    // For every field in the address object, create a new cell at set its inner text to be the current value at the current address's field
+      
       var field = fields[j];
       var $cell = $row.insertCell(j);
       $cell.innerText = address[field];
@@ -34,6 +39,28 @@ function renderTable() {
 }
 
 function handleSearchButtonClick() {
+
+//   // adding rows
+//   $(document).ready(function() {
+//     var t = $('#example').DataTable();
+//     var counter = 1;
+ 
+//     $('#addRow').on( 'click', function () {
+//         t.row.add( [
+//             counter +'.1',
+//             counter +'.2',
+//             counter +'.3',
+//             counter +'.4',
+//             counter +'.5'
+//         ] ).draw( false );
+ 
+//         counter++;
+//     } );
+ 
+
+//   // Automatically add a first row of data
+//   $('#addRow').click();
+// } );
   // Format the user's search by removing leading and trailing whitespace, lowercase the string
   var filterDate = $dateInput.value;
   var filterState = $stateInput.value.trim().toLowerCase();
@@ -41,15 +68,15 @@ function handleSearchButtonClick() {
   var filterCountry = $countryInput.value.trim().toLowerCase();
   var filterShape = $shapeInput.value.trim().toLowerCase();
 
-  // Set filteredAddresses to an array of all addresses whose "state" matches the filter
-  if (filterDate != "")
+// Set filteredAddresses to an array of all addresses whose "state" matches the filter
+if (filterDate != "")
   {
     filteredTable = dataSet.filter(function(address) 
     {
       var addressDate = address.datetime; 
     
     // If true, add the address to the filteredAddresses, otherwise don't add it to filteredAddresses
-    return addressDate === filterDate;
+  return addressDate === filterDate;
     });
   }
   else {filteredTable};
@@ -108,8 +135,4 @@ renderTable();
 $(document).ready(function() {
   $('#table').DataTable();
 } );
-// $(document).ready(function() { 
-//   $("table") 
-//   .tablesorter({widthFixed: true, widgets: ['zebra']}) 
-//   .tablesorterPager({container: $("#pager")}); 
-// }); 
+
