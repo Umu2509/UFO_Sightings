@@ -2,20 +2,10 @@ body {
     background-color: Purple; 
     color: green;
 }
-
-h1 { 
-    color: black;
-    
-  }
 h1 {
-    font-size: 40px;
-}
-  
-/* input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box; */
+    color: green;
+    text-align: center;
+    text-shadow: 3px 2px red;
 }
 
 input[type=text] {
@@ -26,36 +16,14 @@ input[type=text] {
     border: 2px black;
     border-radius: 4px;
     background-color: greenyellow;
+    color:white;
 }
-
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: greenyellow;
-    color: white;
-}
-#table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#table td, #table th {
-    border: 1px green;
-    padding: 8px;
-}
-
-#table tr:nth-child(even){background-color: #f2f2f2;}
-
-#table tr:hover {background-color: #ddd;}
 
 #table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: green;
     color: white;
 }
+

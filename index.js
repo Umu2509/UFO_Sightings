@@ -2,7 +2,7 @@
 var $tbody = document.querySelector("tbody");
 var $dateInput = document.querySelector("#datetime");
 var $stateInput = document.querySelector("#state");
-var $searchBtn = document.querySelector("#add");
+var $searchBtn = document.querySelector("#search");
 var $cityInput = document.querySelector("#city");
 var $countryInput = document.querySelector("#country");
 var $shapeInput = document.querySelector("#shape");
@@ -11,9 +11,6 @@ var $shapeInput = document.querySelector("#shape");
 
 // Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
-
-// add event listener to the add button
-// addBtn.addEventListener("click", someOtherFunction);
 
 // Set filteredAddresses to dataSet initially
 var filteredTable = dataSet;
@@ -40,33 +37,13 @@ function renderTable() {
 
 function handleSearchButtonClick() {
 
-//   // adding rows
-//   $(document).ready(function() {
-//     var t = $('#example').DataTable();
-//     var counter = 1;
- 
-//     $('#addRow').on( 'click', function () {
-//         t.row.add( [
-//             counter +'.1',
-//             counter +'.2',
-//             counter +'.3',
-//             counter +'.4',
-//             counter +'.5'
-//         ] ).draw( false );
- 
-//         counter++;
-//     } );
- 
 
-//   // Automatically add a first row of data
-//   $('#addRow').click();
-// } );
-  // Format the user's search by removing leading and trailing whitespace, lowercase the string
-  var filterDate = $dateInput.value;
-  var filterState = $stateInput.value.trim().toLowerCase();
-  var filterCity = $cityInput.value.trim().toLowerCase();
-  var filterCountry = $countryInput.value.trim().toLowerCase();
-  var filterShape = $shapeInput.value.trim().toLowerCase();
+// Format the user's search by removing leading and trailing whitespace, lowercase the string
+var filterDate = $dateInput.value;
+var filterState = $stateInput.value.trim().toLowerCase();
+var filterCity = $cityInput.value.trim().toLowerCase();
+var filterCountry = $countryInput.value.trim().toLowerCase();
+var filterShape = $shapeInput.value.trim().toLowerCase();
 
 // Set filteredAddresses to an array of all addresses whose "state" matches the filter
 if (filterDate != "")
